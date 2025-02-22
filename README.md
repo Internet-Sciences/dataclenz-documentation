@@ -5,6 +5,46 @@
 <img src ="charts/Dataclenz ProcessMap.drawio (1).png">
 
 
+## MVP
+Our site/app's main workflow for a minimum viable product:  
+* Dashboard
+  * Displays a list of files (jobs), their status, and operations performed (or to be performed)
+  * User can click into a file to be redirected to spreadsheet view of data
+  * If no files available, prompt user to upload a file(csv) to process
+    * redirect to spreadsheet view upon success
+* Spreadsheet View
+  * Displays table containing file data (rows and columns with headers)
+  * Navigate between sheets of current job/file via sheet menu
+* Operations/Services/Transformations (in Spreadsheet View)
+  * Menu for operations to apply to a sheet (user selects which sheet to apply to)
+  * Operations in Validation and Correction & Enhancement will be expanded (or removed) as individual services and grouped instead under Column Operations or Comparison Operations
+  * Sheet Operations: applies to entire sheet
+    * Cleansing(???), Error Detection(???), Normalization(???)
+* Column Operations: prompt user to select one or two columns
+  * Validation (Single Column): results will be number of rows matching (is a number, is a negative number, etc..)
+    * Boolean results: outputs one column containing all rows with a True or False
+  * Formatting (Single Column) : capitalize first letter of column, strip white space, remove odd symbols, etc...
+    * Formatted results: outputs one column containing the formatted rows
+  * Math Ops (One or Two Columns): +/-/x/÷ column by a number or another column (prompt user to select a second column)
+    * Calculated results: outputs one column containing the results of the calculation
+* (IF WE HAVE TIME) Comparison Operations: applies to one or two columns
+  * Number comparison (Single Column): is column less than, greater than, or equal to number
+  * String comparison (Single Column): is column equal to string
+  * Column comparison (Two Columns): is column less than, greater than, or equal to another column  (prompt user to select a second column)
+  * All boolean results: outputs one column containing all rows with a True or False
+* (LATER IMPLEMENTATION FOR CHAINING) Conditional Operations: If user wants to execute an operation depending on the comparison results, user must set a threshold, true Conditional Operation, and a false Conditional Operation for the number of rows that match the condition (or a percentage of rows)
+  * Conditional Operations can be any operation that's NOT a Comparison Operation
+  * make sure user is prompted for all sheet/column selections for the true and false condition operations
+  * Auto executes one or the other depending on threshold and outputs its respective results
+* Results
+  * A new sheet will be created with the results which can be navigated to via sheet menu
+    * If not a sheet operation, it should only have one column
+    * User can perform operations to include this new column
+  * Individual sheets can be exported as csv files
+  * (LATER IMPLEMENTATION) All sheets can be exported
+  * (LATER IMPLEMENTATION) All operations can be imported to another file to execute the same ops in the same order
+
+
 ## Backend
 
 
