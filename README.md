@@ -2,7 +2,7 @@
 
 ### Process Map
 
-<img src ="charts/Dataclenz ProcessMap.drawio (1).png">
+<img src ="charts/Dataclenz ProcessMap.drawio.png">
 
 
 ## MVP
